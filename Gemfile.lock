@@ -29,6 +29,10 @@ GEM
       activesupport (= 3.0.5)
     activesupport (3.0.5)
     arel (2.0.10)
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
     builder (2.1.2)
     cocaine (0.1.0)
     erubis (2.6.6)
@@ -79,11 +83,13 @@ GEM
     tzinfo (0.3.29)
     wice_grid (3.0.0)
     will_paginate (3.0.pre)
+    xml-simple (1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-s3
   faker
   jquery-rails
   mocha

@@ -1,0 +1,9 @@
+development:
+    access_key_id: AKIAITYMC3BHKIRLECWA
+    secret_access_key: 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
+    bucket: gearledger
+ 
+production:
+    access_key_id: AKIAITYMC3BHKIRLECWA
+    secret_access_key: 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
+    bucket: gearledger
