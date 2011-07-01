@@ -1,37 +1,28 @@
 <% title "Items" %>
 
-<table>
-  <tr>
-    <th>Package</th>
-    <th>Name</th>
-    <th>Make</th>
-    <th>Model</th>
-    <th>Barcode</th>
-    <th>Serial</th>
-    <th>Checked Out By</th>
-    <th>Price</th>
-    <th>Condition</th>
-    <th>Last Serviced</th>
-    <th>Next Service</th>
-  </tr>
-  <% for item in @items %>
-    <tr>
-      <td><%= item.package_id %></td>
-      <td><%= item.name %></td>
-      <td><%= item.make %></td>
-      <td><%= item.model %></td>
-      <td><%= item.barcode %></td>
-      <td><%= item.serial %></td>
-      <td><%= item.checked_out_by %></td>
-      <td><%= item.price %></td>
-      <td><%= item.condition %></td>
-      <td><%= item.last_serviced %></td>
-      <td><%= item.next_service %></td>
-      <td><%= link_to "Show", item %></td>
-      <td><%= link_to "Edit", edit_item_path(item) %></td>
-      <td><%= link_to "Destroy", item, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<%= grid(@items_grid, :show_filters => :always) do |g|
+
+  g.column :column_name => 'Name', :attribute_name => 'name'
+
+  g.column :column_name => 'Make', :attribute_name => 'make'
+
+  g.column :column_name => 'Model', :attribute_name => 'model'
+
+  g.column :column_name => 'Barcode', :attribute_name => 'barcode', :no_filter => true
+
+  g.column :column_name => 'Serial #', :attribute_name => 'serial', :no_filter => true
+
+  g.column :column_name => 'Checked Out By', :attribute_name => 'checked_out_by'
+
+  g.column do |item|
+	image_tag item.photo.url(:thumb)
+  end
+
+  g.column   do |item|
+    link_to('Edit', edit_item_path(item))
+  end
+end -%>
+
+
 
 <p><%= link_to "New Item", new_item_path %></p>

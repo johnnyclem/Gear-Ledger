@@ -4,6 +4,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "application", "token-input-facebook" %>
     <%= javascript_include_tag :defaults, "jquery.tokeninput" %>
+	<%= include_wice_grid_assets %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
