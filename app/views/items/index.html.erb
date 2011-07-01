@@ -1,0 +1,37 @@
+<% title "Items" %>
+
+<table>
+  <tr>
+    <th>Package</th>
+    <th>Name</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Barcode</th>
+    <th>Serial</th>
+    <th>Checked Out By</th>
+    <th>Price</th>
+    <th>Condition</th>
+    <th>Last Serviced</th>
+    <th>Next Service</th>
+  </tr>
+  <% for item in @items %>
+    <tr>
+      <td><%= item.package_id %></td>
+      <td><%= item.name %></td>
+      <td><%= item.make %></td>
+      <td><%= item.model %></td>
+      <td><%= item.barcode %></td>
+      <td><%= item.serial %></td>
+      <td><%= item.checked_out_by %></td>
+      <td><%= item.price %></td>
+      <td><%= item.condition %></td>
+      <td><%= item.last_serviced %></td>
+      <td><%= item.next_service %></td>
+      <td><%= link_to "Show", item %></td>
+      <td><%= link_to "Edit", edit_item_path(item) %></td>
+      <td><%= link_to "Destroy", item, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Item", new_item_path %></p>

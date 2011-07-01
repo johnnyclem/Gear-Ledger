@@ -1,0 +1,48 @@
+<% title "Package" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @package.name %>
+</p>
+<p>
+  <strong>Make:</strong>
+  <%= @package.make %>
+</p>
+<p>
+  <strong>Model:</strong>
+  <%= @package.model %>
+</p>
+<p>
+  <strong>Barcode:</strong>
+  <%= @package.barcode %>
+</p>
+<p>
+  <strong>Serial:</strong>
+  <%= @package.serial %>
+</p>
+<p>
+  <strong>Checked Out By:</strong>
+  <%= @package.checked_out_by %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @package.price %>
+</p>
+<p>
+  <strong>Condition:</strong>
+  <%= @package.condition %>
+</p>
+<p>
+  <strong>Last Serviced:</strong>
+  <%= @package.last_serviced %>
+</p>
+<p>
+  <strong>Next Service:</strong>
+  <%= @package.next_service %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_package_path(@package) %> |
+  <%= link_to "Destroy", @package, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", packages_path %>
+</p>

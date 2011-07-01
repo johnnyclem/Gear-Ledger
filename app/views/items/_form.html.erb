@@ -1,0 +1,51 @@
+<%= form_for @item, :html => { :multipart => true} do |f| %>
+  <%= f.error_messages %>
+  <p>
+	<%= f.label :package_tokens, "Package" %><br />
+	<%= f.text_field :package_tokens, "data-pre" => @item.packages.map(&:attributes).to_json %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :make %><br />
+    <%= f.text_field :make %>
+  </p>
+  <p>
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </p>
+  <p>
+    <%= f.label :barcode %><br />
+    <%= f.text_field :barcode %>
+  </p>
+  <p>
+    <%= f.label :serial %><br />
+    <%= f.text_field :serial %>
+  </p>
+  <p>
+    <%= f.label :checked_out_by %><br />
+    <%= f.text_field :checked_out_by %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :condition %><br />
+    <%= f.text_field :condition %>
+  </p>
+  <p>
+    <%= f.label :last_serviced %><br />
+    <%= f.datetime_select :last_serviced %>
+  </p>
+  <p>
+    <%= f.label :next_service %><br />
+    <%= f.datetime_select :next_service %>
+  </p>
+	<%= f.file_field :photo %>
+  <p>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

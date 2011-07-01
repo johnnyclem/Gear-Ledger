@@ -1,0 +1,57 @@
+<% title "Item" %>
+
+<%= image_tag @item.photo.url %>
+
+<p>
+  <strong>Packages:</strong>
+	<% for package in @item.packages %>
+	  <li><%= package.name %></li>
+	<% end %>
+
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+<p>
+  <strong>Make:</strong>
+  <%= @item.make %>
+</p>
+<p>
+  <strong>Model:</strong>
+  <%= @item.model %>
+</p>
+<p>
+  <strong>Barcode:</strong>
+  <%= @item.barcode %>
+</p>
+<p>
+  <strong>Serial:</strong>
+  <%= @item.serial %>
+</p>
+<p>
+  <strong>Checked Out By:</strong>
+  <%= @item.checked_out_by %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @item.price %>
+</p>
+<p>
+  <strong>Condition:</strong>
+  <%= @item.condition %>
+</p>
+<p>
+  <strong>Last Serviced:</strong>
+  <%= @item.last_serviced %>
+</p>
+<p>
+  <strong>Next Service:</strong>
+  <%= @item.next_service %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_item_path(@item) %> |
+  <%= link_to "Destroy", @item, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", items_path %>
+</p>

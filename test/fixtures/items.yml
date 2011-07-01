@@ -1,0 +1,25 @@
+one:
+  package_id: 1
+  name: MyString
+  make: MyString
+  model: MyString
+  barcode: MyString
+  serial: MyString
+  checked_out_by: 1
+  price: 1
+  condition: MyString
+  last_serviced: 2011-06-30 17:27:11
+  next_service: 2011-06-30 17:27:11
+
+two:
+  package_id: 1
+  name: MyString
+  make: MyString
+  model: MyString
+  barcode: MyString
+  serial: MyString
+  checked_out_by: 1
+  price: 1
+  condition: MyString
+  last_serviced: 2011-06-30 17:27:11
+  next_service: 2011-06-30 17:27:11
