@@ -1,18 +1,18 @@
 <% title "Items" %>
 
-<%= grid(@items_grid, :show_filters => :always) do |g|
+<%= grid(@items_grid, :show_filters => :always, :hide_submit_button => true) do |g|
 
-  g.column :column_name => 'Name', :attribute_name => 'name'
+  g.column :column_name => 'Name', :attribute_name => 'name', :auto_reload => true
 
-  g.column :column_name => 'Make', :attribute_name => 'make'
+  g.column :column_name => 'Make', :attribute_name => 'make', :auto_reload => true
 
-  g.column :column_name => 'Model', :attribute_name => 'model'
+  g.column :column_name => 'Model', :attribute_name => 'model', :auto_reload => true
 
-  g.column :column_name => 'Barcode', :attribute_name => 'barcode', :no_filter => true
+  g.column :column_name => 'Barcode', :attribute_name => 'barcode'
 
   g.column :column_name => 'Serial #', :attribute_name => 'serial', :no_filter => true
 
-  g.column :column_name => 'Checked Out By', :attribute_name => 'checked_out_by'
+  g.column :column_name => 'Checked Out By', :attribute_name => 'checked_out_by', :no_filter => true
 
   g.column do |item|
 	image_tag item.photo.url(:thumb)
@@ -21,8 +21,10 @@
   g.column   do |item|
     link_to('Edit', edit_item_path(item))
   end
+  g.column   do |item|
+	link_to('Show', item_path(item))
+end
 end -%>
-
 
 
 <p><%= link_to "New Item", new_item_path %></p>

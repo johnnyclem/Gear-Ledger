@@ -1,17 +1,13 @@
-<% title "Item" %>
+<% title @item.name %>
 
-<%= image_tag @item.photo.url %>
+<%= image_tag @item.photo.url(:medium) %>
 
 <p>
-  <strong>Packages:</strong>
+  <strong>Belongs To The Following Packages:</strong>
 	<% for package in @item.packages %>
 	  <li><%= package.name %></li>
 	<% end %>
 
-</p>
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
 </p>
 <p>
   <strong>Make:</strong>
@@ -35,7 +31,7 @@
 </p>
 <p>
   <strong>Price:</strong>
-  <%= @item.price %>
+  $<%= @item.price %>
 </p>
 <p>
   <strong>Condition:</strong>
