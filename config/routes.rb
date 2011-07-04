@@ -6,5 +6,5 @@ Bookstore::Application.routes.draw do
 
   resources :packages
   
-  root :to => 'items#index'
+  root :to => 'clearance/sessions#new'
 end
