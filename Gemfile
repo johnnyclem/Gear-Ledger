@@ -21,3 +21,5 @@ gem 'wice_grid', "3.0.0"
 gem "will_paginate", "3.0.pre"
 
 gem 'aws-s3'
+
+gem "clearance"

@@ -34,7 +34,12 @@ GEM
       mime-types
       xml-simple
     builder (2.1.2)
+    clearance (0.12.0)
+      diesel (~> 0.1.4)
+      rails (>= 3.0)
     cocaine (0.1.0)
+    diesel (0.1.5)
+      railties
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faker (0.9.5)
@@ -90,6 +95,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-s3
+  clearance
   faker
   jquery-rails
   mocha

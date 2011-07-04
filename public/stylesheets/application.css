@@ -1,7 +1,7 @@
 body {
   background-image: url(images/linen.png);
   background-repeat: repeat;
-  font-family: Verdana, Helvetica, Arial;
+  font-family:Helvetica, Arial, Verdana, sans-serif;
   font-size: 14px;
 }
 
@@ -23,11 +23,15 @@ a {
   width: 75%;
   margin: 0 auto;
   background-color: #FFF;
-  border-radius: 15px;
-  box-shadow: 5px 5px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 10px rgba(0,0,0,.2);
   padding: 20px 40px;
   margin-top: 20px;
   
+}
+
+#signin
+{
+float:right;
 }
 
 #flash_notice, #flash_error, #flash_alert {
@@ -76,3 +80,33 @@ a {
 .error_messages ul {
   margin: 0;
 }
+
+/* Navigation */
+
+ul.menu_tabbed {
+	list-style: none;
+	border-bottom: 1px #999999 solid;
+	padding-bottom: 10px
+	}	
+ul.menu_tabbed li {
+	display: inline;
+	margin-right: 5px;
+	}	
+ul.menu_tabbed li a {
+	color:#999999;
+	text-decoration: none;
+	background: #f7f7f7;
+	border: 1px #CCCCCC solid;
+	border-bottom: none;
+	padding: 10px 14px;
+	}	
+ul.menu_tabbed li a.selected {
+	color:#666666;
+	background:#FFFFFF;
+	border: 1px #999999 solid;
+	border-bottom: 1px #FFFFFF solid;
+	padding: 14px 14px 10px 14px;	
+	}	
+ul.menu_tabbed li a:hover {
+	padding: 14px 14px 10px 14px;	
+	}

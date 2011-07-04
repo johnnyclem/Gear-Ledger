@@ -1,30 +1,11 @@
 <% title "Items" %>
+<ul class="menu_tabbed"> 
+	<li><%= link_to "Check-In" %></li> 
+	<li><%= link_to "Check-Out"%> </li> 
+	<li><%= link_to "Items", {:controller => 'items', :action => 'index'}, :class => 'selected' %></li> 
+	<li><%= link_to "Packages", packages_path %></li> 
+	</ul> 
 
-<%= grid(@items_grid, :show_filters => :always, :hide_submit_button => true) do |g|
-
-  g.column :column_name => 'Name', :attribute_name => 'name', :auto_reload => true
-
-  g.column :column_name => 'Make', :attribute_name => 'make', :auto_reload => true
-
-  g.column :column_name => 'Model', :attribute_name => 'model', :auto_reload => true
-
-  g.column :column_name => 'Barcode', :attribute_name => 'barcode'
-
-  g.column :column_name => 'Serial #', :attribute_name => 'serial', :no_filter => true
-
-  g.column :column_name => 'Checked Out By', :attribute_name => 'checked_out_by', :no_filter => true
-
-  g.column do |item|
-	image_tag item.photo.url(:thumb)
-  end
-
-  g.column   do |item|
-    link_to('Edit', edit_item_path(item))
-  end
-  g.column   do |item|
-	link_to('Show', item_path(item))
-end
-end -%>
 
 
 <p><%= link_to "New Item", new_item_path %></p>

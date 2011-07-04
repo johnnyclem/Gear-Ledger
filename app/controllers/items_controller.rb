@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   
   def index
-    @items_grid = initialize_grid(Item)
+    @item = Item.find(:all)
   end
 
   def show
