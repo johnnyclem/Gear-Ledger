@@ -1,4 +1,6 @@
 class PackagesController < ApplicationController
+  before_filter :authorize
+  
   def index
     @packages = Package.where("name like ?", "%#{params[:q]}%")
     respond_to do |format|
