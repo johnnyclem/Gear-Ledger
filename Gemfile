@@ -25,3 +25,5 @@ gem 'aws-s3'
 gem "clearance"
 
 gem "rake", "0.8.7"
+
+gem 'newrelic_rpm'
