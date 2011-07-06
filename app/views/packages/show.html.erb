@@ -1,5 +1,10 @@
 <% title @package.name %>
-
+<ul class="menu_tabbed"> 
+	<li><%= link_to "Check-In" %></li> 
+	<li><%= link_to "Check-Out"%> </li> 
+	<li><%= link_to "Items", items_path %></li> 
+	<li><%= link_to "Packages", {:controller => 'packages', :action => 'index'}, :class => 'selected' %></li> 
+	</ul>
 <p>
   <strong>Contains:</strong>
 	<% for item in @package.items %>

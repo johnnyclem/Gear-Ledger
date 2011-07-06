@@ -6,6 +6,26 @@
 	<li><%= link_to "Packages", packages_path %></li> 
 	</ul> 
 
+<table>		<thead>  
+			<tr>
+	    		<th>Name</th>
+	    		<th>Barcode</th>
+				<th>Checked-Out By</th>
+				<th>Last Serviced</th>
+				<th>Next Service</th>
+				<th>Image</th>
+	  		</tr>
+	<% @items.each do |item| %>
+	    <tr>
+	      <td><%= link_to item.name, item %></td>
+	      <td><%= item.barcode %></td>
+		  <td><%= item.checked_out_by %>
+		  <td><%= item.last_serviced.strftime("%B %Y") %>
+		  <td><%= item.next_service.strftime("%B %Y") %>
+		  <td><%= link_to image_tag(item.photo.url(:thumb)), item %>
+	    </tr>
+	  <% end %>
+	</table>
 
 
 <p><%= link_to "New Item", new_item_path %></p>

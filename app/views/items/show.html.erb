@@ -1,3 +1,9 @@
+<ul class="menu_tabbed"> 
+	<li><%= link_to "Check-In" %></li> 
+	<li><%= link_to "Check-Out"%> </li> 
+	<li><%= link_to "Items", {:controller => 'items', :action => 'index'}, :class => 'selected' %></li> 
+	<li><%= link_to "Packages", packages_path %></li> 
+	</ul>
 <% title @item.name %>
 
 <%= image_tag @item.photo.url(:medium) %>
@@ -39,11 +45,11 @@
 </p>
 <p>
   <strong>Last Serviced:</strong>
-  <%= @item.last_serviced %>
+  <%= @item.last_serviced.strftime("%B %Y") %>
 </p>
 <p>
   <strong>Next Service:</strong>
-  <%= @item.next_service %>
+  <%= @item.next_service.strftime("%B %Y") %>
 </p>
 
 <p>
