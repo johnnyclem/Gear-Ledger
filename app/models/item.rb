@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  attr_accessible :package_tokens, :name, :make, :model, :barcode, :serial, :checked_out_by, :price, :condition, :last_serviced, :next_service, :photo
+  attr_accessible :package_tokens, :name, :make, :model, :barcode, :serial, :checked_out_by, :price, :condition, :last_serviced, :next_service, :photo, :quantity
   has_many :packagings do
     def find_all_by_package(package)
       find_all_by_package_id(package.id)
@@ -19,5 +19,11 @@ class Item < ActiveRecord::Base
   
   def package_tokens=(ids)
     self.package_ids = ids.split(",")
+  end
+  
+  def self.search(search, page)
+    paginate :per_page => 8, :page => page,
+             :conditions => ['name like ?', "%#{search}%"],
+             :order => 'name'
   end
 end

@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_filter :authorize
   
   def index
-    @items = Item.order(params[:sort])
+    @items = Item.search(params[:search], params[:page])
   end
 
   def show

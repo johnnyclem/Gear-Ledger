@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110704053137) do
+ActiveRecord::Schema.define(:version => 20110706212254) do
 
   create_table "items", :force => true do |t|
     t.integer  "package_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20110704053137) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "quantity"
   end
 
   create_table "packages", :force => true do |t|

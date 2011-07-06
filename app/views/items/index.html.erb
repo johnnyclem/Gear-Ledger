@@ -1,4 +1,6 @@
 <% title "Items" %>
+
+
 <ul class="menu_tabbed"> 
 	<li><%= link_to "Check-In" %></li> 
 	<li><%= link_to "Check-Out"%> </li> 
@@ -9,6 +11,7 @@
 <table>		<thead>  
 			<tr>
 	    		<th>Name</th>
+				<th>Quantity</th>
 	    		<th>Barcode</th>
 				<th>Checked-Out By</th>
 				<th>Last Serviced</th>
@@ -18,6 +21,7 @@
 	<% @items.each do |item| %>
 	    <tr>
 	      <td><%= link_to item.name, item %></td>
+		  <td><%= item.quantity %></td>
 	      <td><%= item.barcode %></td>
 		  <td><%= item.checked_out_by %>
 		  <td><%= item.last_serviced.strftime("%B %Y") %>
@@ -26,6 +30,7 @@
 	    </tr>
 	  <% end %>
 	</table>
-
-
+<center>
+	<%= will_paginate @items %>
+</center>
 <p><%= link_to "New Item", new_item_path %></p>
