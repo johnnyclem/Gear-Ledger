@@ -40,4 +40,6 @@ class ItemsController < ApplicationController
     @item.destroy
     redirect_to items_url, :notice => "Successfully destroyed item."
   end
+  
+  
 end
