@@ -2,7 +2,7 @@ Bookstore::Application.routes.draw do
   
   match '/sign_out' =>  "clearance/sessions#destroy" 
           
-  redirect('/sign_up', '/')
+  match '/sign_up' => 'items#index'
   
   resources :items
 
