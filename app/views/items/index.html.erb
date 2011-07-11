@@ -1,3 +1,24 @@
+<script type="text/javascript">
+$(document).ready(function() {
+	$dialog = $('<div />')
+		.dialog({
+			autoOpen: false,
+			modal: true,
+			position: 'top',
+			title: 'New Item'
+		});
+
+	$('#opener').click(function() {
+		$dialog.load('/items/new')
+		$dialog.dialog('open');
+		
+		// prevent the default action, e.g., following a link
+		return false;
+	});
+	
+});
+</script>
+
 <% title "Items" %>
 
 
@@ -24,8 +45,8 @@
 		  <td><%= item.quantity %></td>
 	      <td><%= item.barcode %></td>
 		  <td><%= item.checked_out_by %>
-		  <td><%= item.last_serviced.strftime("%B %Y") %>
-		  <td><%= item.next_service.strftime("%B %Y") %>
+		  <td><%= item.last_serviced %>
+		  <td><%= item.next_service %>
 		  <td><%= link_to image_tag(item.photo.url(:thumb)), item %>
 	    </tr>
 	  <% end %>
@@ -33,4 +54,4 @@
 <center>
 	<%= will_paginate @items %>
 </center>
-<p><%= link_to "New Item", new_item_path %></p>
+<p><button id="opener">New Item</button></p>

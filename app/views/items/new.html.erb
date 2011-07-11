@@ -1,5 +1,41 @@
-<% title "New Item" %>
+<%= form_for @item, :html => { :multipart => true} do |f| 
+	%>
+  <%= f.error_messages %>
+  <p>
+	<%= f.label :package_tokens, "Package" %><br />
+	<%= f.text_field :package_tokens, "data-pre" => @item.packages.map(&:attributes).to_json %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+	<p>
+		<%= f.label :quantity %><br />
+		<%= f.text_field :quantity %>
+		</p>
+  <p>
+    <%= f.label :make %><br />
+    <%= f.text_field :make %>
+  </p>
+  <p>
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </p>
+  <p>
+    <%= f.label :barcode %><br />
+    <%= f.text_field :barcode %>
+  </p>
 
-<%= render 'form' %>
-
-<p><%= link_to "Back to List", items_path %></p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :condition %><br />
+    <%= f.text_field :condition %>
+  </p>
+	<%= f.file_field :photo %>
+  <p>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

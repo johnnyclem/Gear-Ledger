@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   
   def index
     @items = Item.search(params[:search], params[:page])
+    
   end
 
   def show
@@ -11,6 +12,8 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    render :layout => false
+    
   end
 
   def create
